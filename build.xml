@@ -1,0 +1,31 @@
+<project default="run"> 
+	<property name="lib.dir" value = "lib"/>
+		<path id="classpath">
+		<fileset dir="${lib.dir}" includes = "**/*.jar"/>
+		</path>
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes" classpathref = "classpath"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+<!--      	<classpath>
+ 	      	<path refid="classpath"/>
+        	</classpath>	-->
+            <manifest>
+                <attribute name="Main-Class" value="SeleniumWebDriverCode"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="clean,compile,jar">
+        <java jar="build/jar/HelloWorld.jar" fork="true"/>
+    </target>
+
+</project>
