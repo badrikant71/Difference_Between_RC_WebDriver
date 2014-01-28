@@ -37,10 +37,10 @@ public void testGmailLoginTest() throws Exception {
 
                 /* Verify if Username and Password text fields is available then enter the valid username and password.*/
                 if(selenium.isElementPresent("xpath=//input[@id='Email']")) {
-                                selenium.type("xpath=//input[@id='Email']", "badrikant71@gmail.com");
+                                selenium.type("xpath=//input[@id='Email']", "dummy@gmail.com");
                 }             
                 if(selenium.isElementPresent("xpath=//input[@id='Passwd']")) {
-                                selenium.type("xpath=//input[@id='Passwd']", "Guit@r007");
+                                selenium.type("xpath=//input[@id='Passwd']", "dummy@r007");
                 }
                
                 /* Click on "Sign in" button. */
